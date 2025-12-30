@@ -7,7 +7,7 @@ const startServer = async () => {
     await mongoose.connect(env.mongoUri);
     console.log("MongoDB connected");
 
-    app.listen(env.port, () => {
+    app.listen(env.port || 5000, () => {
       console.log(`Server running on port ${env.port}`);
     });
   } catch (err) {
@@ -15,5 +15,5 @@ const startServer = async () => {
     process.exit(1);
   }
 };
-
+//
 startServer();
